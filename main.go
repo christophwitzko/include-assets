@@ -15,6 +15,7 @@ const assetTemplate = AssetObject("H4sIAAAAAAAA/3SQsU7DMBCGZ99THJlsKWoXxIDUoUA3B
 
 func main() {
 	name := flag.String("name", "MyAssetName", "name of the asset")
+	noLib := flag.Bool("nolib", false, "do not include the unpack library")
 	flag.Parse()
 	var data bytes.Buffer
 	encoder := base64.NewEncoder(base64.StdEncoding, &data)
@@ -22,6 +23,9 @@ func main() {
 	io.Copy(comp, os.Stdin)
 	comp.Close()
 	encoder.Close()
-	template, _ := assetTemplate.LoadAsString()
+	template := ""
+	if !*noLib {
+		template, _ = assetTemplate.LoadAsString()
+	}
 	fmt.Printf(template+"\nconst %s = AssetObject(\"%s\")\n", strings.Title(*name), data.String())
 }
