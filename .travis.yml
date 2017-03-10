@@ -1,5 +1,12 @@
 language: go
 go:
   - 1.x
+install:
+  - go get github.com/mitchellh/gox
+  - go get github.com/tcnksm/ghr
+  - curl -SL https://github.com/semantic-release/go-semantic-release/releases/download/v1.2.1/semantic-release_v1.2.1_linux_amd64 -o semantic-release
+  - chmod +x semantic-release
+after_success:
+  - ./release
 notifications:
   email: false

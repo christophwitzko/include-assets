@@ -1,6 +1,6 @@
 # include-assets
 
-[![Build Status](https://travis-ci.com/christophwitzko/include-assets.svg?token=UdnpNRsQPVxpTPh6DNqo&branch=master)](https://travis-ci.com/christophwitzko/include-assets)
+[![Build Status](https://travis-ci.org/christophwitzko/include-assets.svg?branch=master)](https://travis-ci.org/christophwitzko/include-assets)
 
 ## Example
 ```
