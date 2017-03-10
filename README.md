@@ -6,3 +6,9 @@
 ```
 cat file.jpg | ./include-assets -name MyAsset > assets.go
 ```
+
+## Licence
+
+The [MIT License (MIT)](http://opensource.org/licenses/MIT)
+
+Copyright © 2017 [Christoph Witzko](https://twitter.com/christophwitzko)
