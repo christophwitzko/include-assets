@@ -5,8 +5,5 @@ set -e
 ~/semantic-release -ghr -vf
 export VERSION=$(cat .version)
 
-export NAME=$(basename "$PWD")
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -a --installsuffix cgo -ldflags="-s -w" -o "bin/${NAME}_v${VERSION}_linux_amd64_static"
-
 gox -ldflags="-s -w" -output="bin/{{.Dir}}_v${VERSION}_{{.OS}}_{{.Arch}}"
 ghr $(cat .ghr) bin/
