@@ -23,7 +23,7 @@ func main() {
 	io.Copy(comp, os.Stdin)
 	comp.Close()
 	encoder.Close()
-	template := ""
+	var template string
 	if !*noLib {
 		template, _ = assetTemplate.LoadAsString()
 	}
